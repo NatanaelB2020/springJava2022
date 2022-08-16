@@ -1,10 +1,7 @@
 package com.example.EstudoSpring.controller;
 
 import com.example.EstudoSpring.model.Cliente;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/clientes")
@@ -16,8 +13,13 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
-    public Cliente obeterClienteId(@PathVariable int id){
+    public Cliente obeterClienteId1(@PathVariable int id){
         return new Cliente(id, "Margareth", "987.654.321-00");
+    }
+
+    @GetMapping
+    public Cliente obeterClienteId2(@RequestParam(name = "id", defaultValue = "656") int id){
+        return new Cliente(id, "Francisquina", "567.564.321-00");
     }
 
 }
