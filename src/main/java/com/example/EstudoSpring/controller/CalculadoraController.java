@@ -1,9 +1,6 @@
 package com.example.EstudoSpring.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path="/calculadora")
@@ -12,33 +9,23 @@ public class CalculadoraController {
     // /calculadora /soma /10 /20
 
     // caculadora /subtrair ?a=10&b=20
-    Integer numA = 20;
-    Integer numB = 10;
-    Integer soma = numA + numB;
 
-    Integer subtrair = numA - numB;
-
-    Integer dividir = numA / numB;
-
-    Integer multiplicar = numA * numB;
-
-
-    @GetMapping("/somar")
-    public int somar() {
-        return soma;
+    @GetMapping("/somar/{numA}/{numB}")
+    public int somar(@PathVariable int numA, @PathVariable int numB) {
+        return numA + numB;
     }
 
-    @GetMapping("/subtrair")
-    public int subtrair(){
-        return subtrair;
+    @GetMapping("/subtrair/{numA}/{numB}")
+    public int subtrair(int numA, int numB){
+        return numA - numB;
     }
 
-    @GetMapping("/dividir")
-    public int dividir() {
-        return dividir;
+    @GetMapping("/dividir/{numA}/{numB}")
+    public int dividir(@PathVariable int numA, @PathVariable int numB) {
+        return numA / numB;
     }
-    @GetMapping("/multiplicar")
-    public int multiplicar() {
-        return multiplicar;
+    @GetMapping("/multiplicar/{numA}/{numB}")
+    public int multiplicar(@PathVariable int numA, @PathVariable int numB) {
+        return numA * numB;
     }
 }
