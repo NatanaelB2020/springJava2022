@@ -1,7 +1,10 @@
 package com.example.EstudoSpring.model;
 
+import javax.persistence.Id;
+
 public class Cliente {
 
+    @Id
     private int id;
     private String nome;
     private String cpf;
