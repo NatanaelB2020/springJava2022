@@ -1,4 +1,4 @@
-package com.example.EstudoSpring.model;
+package com.example.EstudoSpring.entity;
 
 import javax.persistence.Id;
 

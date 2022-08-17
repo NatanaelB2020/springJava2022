@@ -1,6 +1,6 @@
 package com.example.EstudoSpring.controller;
 
-import com.example.EstudoSpring.model.Cliente;
+import com.example.EstudoSpring.entity.Cliente;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
